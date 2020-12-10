@@ -24,6 +24,49 @@
   }
 }
 
+.liste-acteurs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.liste-acteurs .acteur{
+  width: calc(20% - 30px);
+}
+
+.film{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &:hover{
+    color: var(--color-white);
+    background: #2f0202;
+    transition: .9s all;
+
+    h4{
+      color: var(--color-white);
+      transition: .9s all;
+    }
+
+    img{
+      border: 15px solid #2f0202;
+      transition: .5s all;
+    }
+
+    a{
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid var(--color-white);
+      transition: 1s all;
+
+      &:hover{
+        background:var(--color-white) ;
+        transition: .5s all;
+      }
+    }
+  }
+}
 
 
 

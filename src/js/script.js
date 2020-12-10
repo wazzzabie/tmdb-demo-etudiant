@@ -211,7 +211,7 @@ class MovieDB{
 
     }
     retourInfoFilm(event){
-        console.log("retourInfoFilm")
+        //console.log("retourInfoFilm")
         let target = event.currentTarget;
         let data = JSON.parse(target.responseText)
         console.log(data);
@@ -221,7 +221,8 @@ class MovieDB{
     }
     afficherInfoFilm(data){
 
-        document.querySelector('h1').innerHTML = data.title;
+        document.querySelector('h2').innerHTML = data.title;
+        document.querySelector('p').innerHTML = data.overview;
 
        /* for (let i = 0; i < this.totalFilm; i++) {
             console.log(data[i].title);
