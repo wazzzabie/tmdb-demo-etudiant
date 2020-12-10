@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-    var mySwiper = new Swiper('.swiper-container', {
+    /*var mySwiper = new Swiper('.swiper-container', {
         // Optional parameters
 
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(){
         scrollbar: {
             el: '.swiper-scrollbar',
         },
-    })
+    })*/
 
 
 /*----------------------------------------------------------------------------------*/
@@ -73,11 +73,20 @@ function openMenu(evt){
 
 /*----------------------------------------------------------------------------------*/
 let connexion = new MovieDB();
-connexion.requeteDernierFilm();
-//connexion.requeteCarouselFilm();
+//connexion.requeteDernierFilm();
 
 
+ if(document.location.pathname.search('fiche-film.html')> 0){
 
+    connexion.requeteInfoFilm(14)
+ }else{
+     connexion.requeteDernierFilm();
+
+
+     connexion.requeteCarouselFilm();
+ }
+
+ console.log(document.location.pathname.search);
 
 
 });
@@ -100,17 +109,6 @@ class MovieDB{
         requete.send();
 
     }
-
-    /*requeteCarouselFilm(){
-
-        let carrousel =  new XMLHttpRequest();
-        carrousel.addEventListener("loadend", this.retourCarrouselFilm.bind(this));
-        carrousel.open('GET', this.baseUrl +"movie/popular?api_key="+ this.apiKey +"&language="+ this.lang +"&page=1");
-        carrousel.send();
-    }*/
-
-
-
     retourDernierFilm(event){
         //console.log('retourDernierFilm');
         let target = event.currentTarget;
@@ -118,17 +116,12 @@ class MovieDB{
         this.afficherDernierFilm(data);
 
     }
-
-    /*retourCarrouselFilm(event){
-        console.log('retourCarrouselFilm');
-        let targetC = event.currentTarget;
-        let dataC = JSON.parse(targetC.responseText).results
-        this.afficherCarrouselFilm(dataC);
-        //console.log(targetC.responseText);
-    }*/
-
     afficherDernierFilm(data){
         //console.log('afficherDernierFilm')
+
+        let section = document.querySelector(".liste-films");
+        console.log(section);
+
         for (let i = 0; i < this.totalFilm; i++) {
             console.log(data[i].title);
 
@@ -147,20 +140,37 @@ class MovieDB{
             uneImage.setAttribute("src", src);
             uneImage.setAttribute("alt", data[i].title);
 
-            /*article.querySelector('a').href="fiche-film.html?id=" + data[i];
+            unArticle.querySelector('a').href = "fiche-film.html?id=" + data[i].id;
 
-            section.appendChild(article);*/
+            section.appendChild(unArticle);
 
 
             document.querySelector(".liste-films").appendChild(unArticle);
         }
     }
 
-    /*afficherCarrouselFilm(dataC){
+
+    retourCarrouselFilm(event){
+        console.log('retourCarrouselFilm');
+        let targetC = event.currentTarget;
+        let dataC = JSON.parse(targetC.responseText).results
+        this.afficherCarrouselFilm(dataC);
+        //console.log(targetC.responseText);
+    }
+    requeteCarouselFilm(){
+
+            let carrousel =  new XMLHttpRequest();
+            carrousel.addEventListener("loadend", this.retourCarrouselFilm.bind(this));
+            carrousel.open('GET', this.baseUrl +"movie/popular?api_key="+ this.apiKey +"&language="+ this.lang +"&page=1");
+            carrousel.send();
+        }
+    afficherCarrouselFilm(dataC){
+
 
 
         //this.totalFilm = 9;
         for (let i = 0; i < this.totalFilm; i++) {
+
             console.log(dataC[i]);
             let unArticle = document.querySelector(".template-c>article.filmswiper").cloneNode(true);
 
@@ -168,7 +178,76 @@ class MovieDB{
 
 
             document.querySelector(".carrousel").appendChild(unArticle);
+
         }
-    }*/
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        })
+    }
+
+
+    requeteInfoFilm(movieId){
+        let requete = new XMLHttpRequest();
+        requete.addEventListener("loadend", this.retourInfoFilm.bind(this));
+        requete.open('GET', this.baseUrl +"movie/" + movieId + "?api_key="+ this.apiKey +"&language="+ this.lang +"&page=1");
+        requete.send();
+
+    }
+    retourInfoFilm(event){
+        console.log("retourInfoFilm")
+        let target = event.currentTarget;
+        let data = JSON.parse(target.responseText)
+        console.log(data);
+
+        this.afficherInfoFilm(data);
+
+    }
+    afficherInfoFilm(data){
+
+        document.querySelector('h1').innerHTML = data.title;
+
+       /* for (let i = 0; i < this.totalFilm; i++) {
+            console.log(data[i].title);
+
+
+            let unArticle =  document.querySelector(".template>article.film").cloneNode(true);
+
+
+            unArticle.querySelector("h2").innerHTML = data[i].title;
+            unArticle.querySelector("h3").innerHTML = data[i].vote_average;
+            unArticle.querySelector("h4").innerHTML = data[i].release_date;
+            unArticle.querySelector("p.description").innerHTML = data[i].overview || "pas de description";
+
+            let src = this.imgPath + "w185" + data[i].poster_path;
+            //console.log(src);
+            let uneImage = unArticle.querySelector("img");
+            uneImage.setAttribute("src", src);
+            uneImage.setAttribute("alt", data[i].title);
+
+            article.querySelector('a').href="fiche-film.html?id=" + data[i].id;
+
+            section.appendChild(article);
+
+
+            document.querySelector(".liste-films").appendChild(unArticle);
+        }*/
+    }
 }
 
