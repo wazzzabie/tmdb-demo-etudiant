@@ -2,10 +2,10 @@
 
 
 h1, h2, h3, h4, h5, h6{
-  font-family: var(--ff-title-primary);
+  font-family: var(--ff-title);
   line-height: var(--lh-thin);
   font-weight: var(--fw-bold);
-  //color: ;
+  color:var(--color-white) ;
 }
 
 h1{
@@ -23,7 +23,9 @@ h3{
 }
 
 h4{
-  font-size: var(--fz-h4);
+  font-size: 0.6rem;
+  font-family: var(--ff-normal);
+  color: var(--color-text-primary);
 }
 
 h5{

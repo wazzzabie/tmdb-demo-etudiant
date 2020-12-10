@@ -7,14 +7,21 @@
 
   article {
     flex-basis: 24%;
-    padding: 20px;
-
-    border: 1px white solid;
-
+    padding: 0;
     margin-bottom: 20px;
-
   }
 
+  p{
+    margin: 30px;
+  }
+
+  h2{
+    margin-bottom: 0;
+  }
+
+  h4{
+    margin-top: 5px;
+  }
 }
 
 

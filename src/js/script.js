@@ -111,6 +111,8 @@ class MovieDB{
 
 
             unArticle.querySelector("h2").innerHTML = data[i].title;
+            unArticle.querySelector("h3").innerHTML = data[i].vote_average;
+            unArticle.querySelector("h4").innerHTML = data[i].release_date;
             unArticle.querySelector("p.description").innerHTML = data[i].overview || "pas de description";
 
             let src = this.imgPath + "w185" + data[i].poster_path;

@@ -1,21 +1,36 @@
 .carrousel{
 
+  .swiper-container{
+    margin-top: 200px;
+    height: 800px;
+
+
+    .swiper-slide{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+    .filmswiper{
+      flex-direction: column;
+      margin: 10px;
+
+    }
 }
 
-.swiper-container{
-  margin-top: 200px;
-  height: 600px;
+  .swiper-button-prev, .swiper-button-next{
+    color:var(--color-white);
+  }
 
+  .swiper-pagination-bullet{
+    background: var(--color-white);
+    opacity: 0;
+  }
 
-  .swiper-slide{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .swiper-scrollbar-drag{
+    background: var(--color-white);
+  }
 
-}
-  .filmswiper{
-    flex-direction: column;
-    margin: 10px;
-}
 }
 
