@@ -5,40 +5,143 @@
     <title>TIMflix</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Parisienne&family=Rubik&family=Unica+One&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cc5828aeb4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
+
+
 
     <script src="js/script.js" defer></script>
 
 
-</head>
+
 <body>
 
 
+
+
+
+<header>
 <div class="wrapper">
+    <nav class="nav-primary">
+        <ul>
+            <li><a href="#"><span class="liens">Accueil</span></a></li>
+            <li><a href="#"><span class="liens">À l'affiche</span></a></li>
+            <li><a href="#" class="menu-logo"><h1 class="logo">
+                <span class="material-icons">theaters</span>TimFlix
+            </h1></a></li>
+            <li><a href="#"><span class="liens">À Venir</span></a></li>
+            <li><a href="#"><span class="liens">Connexion</span></a></li>
+        </ul>
+    </nav>
+    <nav class="nav-primary-mobile">
+        <ul>
+            <li><a href="#" class="menu-logo"><h1 class="logo">
+                <span class="material-icons">theaters</span>TimFlix
+            </h1></a></li>
+            <li>
+                <button class="hamburger hamburger-animated">
+                    <span class="material-icons icon-open">menu</span>
+                    <span class="material-icons icon-close">close</span>
+                </button>
+            </li>
+        </ul>
+        <nav class="mobile-modal">
+            <ul>
+                <li><a href="#"><span>Accueil</span></a></li>
+                <li><a href="#"><span>À l'affiche</span></a></li>
+                <li><a href="#"><span>À Venir</span></a></li>
+                <li><a href="#"><span>Connexion</span></a></li>
+            </ul>
+        </nav>
+    </nav>
+</div>
+</header>
+
+
+
+
+<div class="template">
+
+    <article class="film">
+        <h2>Titre du film (à modifier)</h2>
+        <img src="images/image-temp.jpg" alt="Texte de l'image (à modifier)">
+        <p class="description">Une description du film. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error illum laborum non.</p>
+        <a href="fiche-film.html?id=284053">Voir plus d'information</a>
+    </article>
+
+</div>
+
+
+ <section class="hero">
+  <div class="wrapper">
 
     <div class="carrousel">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <article class="filmswiper">
+            <img src="images/image-temp.jpg" alt="Texte de l'image (à modifier)">
+            <h2>Titre du film (à modifier)</h2>
+            </article>
 
-        <div>
+            <article class="filmswiper">
+            <img src="images/image-temp.jpg" alt="Texte de l'image (à modifier)">
+            <h2>Titre du film (à modifier)</h2>
+            </article>
+
+            <article class="filmswiper">
+            <img src="images/image-temp.jpg" alt="Texte de l'image (à modifier)">
+            <h2>Titre du film (à modifier)</h2>
+            </article>
+        </div>
+
+        <div class="swiper-slide">
             <img src="images/image-temp.jpg" alt="Texte de l'image (à modifier)">
             <h2>Titre du film (à modifier)</h2>
         </div>
 
-        <div>
+        <div class="swiper-slide">
             <img src="images/image-temp.jpg" alt="Texte de l'image (à modifier)">
             <h2>Titre du film (à modifier)</h2>
         </div>
+                ...
+            </div>
+            <div class="swiper-pagination"></div>
 
-        <div>
-            <img src="images/image-temp.jpg" alt="Texte de l'image (à modifier)">
-            <h2>Titre du film (à modifier)</h2>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+
+
         </div>
-
     </div>
+ </section>
+        <hr>
 
-    <hr>
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <section class="liste-films">
 
+
+
+
+
+
+
+<!--
+
         <article class="film">
             <h2>Titre du film (à modifier)</h2>
             <img src="images/image-temp.jpg" alt="Texte de l'image (à modifier)">
@@ -87,10 +190,28 @@
             <p class="description">Une description du film. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error illum laborum non.</p>
             <a href="fiche-film.html?id=284053">Voir plus d'information</a>
         </article>
+-->
 
     </section>
 
 </div>
+
+    <section class="reseaux-sociaux">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-pinterest-p"></a>
+    </section>
+
+    <footer class="footer-page">
+        <div class="wrapper">
+                <img class="logodb" src="images/logodb.png"/>
+                <p>Rudy Breton</p>
+                <div id="retour" class="retour">
+                <i class="material-icons arrow">arrow_circle_up</i>
+            </div>
+        </div>
+
+    </footer>
 
 
 </body>

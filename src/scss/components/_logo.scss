@@ -1,0 +1,29 @@
+.logo{
+  display:flex;
+  align-items: center;
+  font-family: var(--ff-title-primary);
+
+  span{
+    //margin-right:10px;
+    font-size:1.5rem;
+  }
+
+
+}
+
+@media screen and (min-width: $vw-medium){
+  .logo{
+    flex-direction: column;
+    transition: .5s all;
+
+    span{
+      font-size:6rem;
+      //margin-bottom: -10px;
+    }
+
+    &:hover{
+     color: var(--color-pinterest);
+    }
+
+  }
+}

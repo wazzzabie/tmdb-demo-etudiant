@@ -1,0 +1,52 @@
+.footer-page{
+
+  .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+
+
+  .logodb{
+    width: 200px;
+    height:40px;
+    display: block;
+    position: relative;
+    transition: .5s all;
+
+    &:before {
+      transform: scaleX(0);
+      transition: .2s transform ease-out;
+    }
+    &:hover{
+      transition: .5s all;
+      transform: scaleX(.5);
+    }
+  }
+
+
+ p{
+   margin-right: 150px;
+   font-family: 'Parisienne', cursive;
+   &:hover{
+     color: var(--color-pinterest);
+     transition: .5s all;
+
+   }
+ }
+
+.arrow{
+  font-size: 1.6rem;
+
+  &:hover{
+    color: var(--color-pinterest);
+    transition: .5s all;
+    cursor: pointer;
+  }
+
+}
+
+}
+
+

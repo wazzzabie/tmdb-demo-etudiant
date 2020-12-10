@@ -1,25 +1,31 @@
 // STYLE DE BASE DE TOUS LES LIENS ET BOUTON DU SITE
 
 a{
+  transition: .5s all;
+  font-family: var(--ff-title-secondary);
+
   &:link{
-    color: var(--color-link);
+    color: var(--color-white);
     text-decoration: none;
   }
 
   &:visited{
-    color: var(--color-link-visited);
+    color: var(--color-white);
+    text-decoration: none;
   }
 
   &:hover{
-    color: var(--color-link-hover);
-    text-decoration: underline;
+    color: var(--color-pinterest);
+    text-decoration: none;
   }
 
   &:active{
-    color: var(--color-link-active);
+    color: var(--color-white);
+    text-decoration: none;
   }
 
   &:focus{
-    color: var(--color-link-focus);
+    color: var(--color-white);
+    text-decoration: none;
   }
 }

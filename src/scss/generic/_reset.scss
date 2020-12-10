@@ -9,3 +9,13 @@ html{
 *, *:before, *:after{
   box-sizing: inherit;
 }
+
+button {
+  background: none;
+  border: none;
+  color: var(--color-white);
+
+  &:focus {
+    outline: none;
+  }
+}

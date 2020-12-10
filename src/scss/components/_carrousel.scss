@@ -1,12 +1,21 @@
 .carrousel{
-  display: flex;
-  justify-content: space-between;
-
-  div{
-    width: calc(33.3333% - 20px);
-
-  }
 
 }
 
+.swiper-container{
+  margin-top: 200px;
+  height: 600px;
+
+
+  .swiper-slide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+  .filmswiper{
+    flex-direction: column;
+    margin: 10px;
+}
+}
 
