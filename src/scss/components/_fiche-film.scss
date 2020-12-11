@@ -3,12 +3,15 @@
   margin-top: 220px;
   height: 750px;
   padding: 50px 100px 50px 100px;
+  transition: .5s all;
 
   .affiche{
-    width: 300px;
+    width: 350px;
     height: 500px;
     left: 50%;
   }
+
+
 
   h3{
     position:absolute;
@@ -20,12 +23,14 @@
     border-radius: 50%;
     z-index: 0;
     transform: translate(-50%,-50%);
+    transition: .5s all;
   }
 
   h4{
     top:750px;
     position:absolute;
     font-size: 1rem;
+    transition: .5s all;
   }
 
   h2{
@@ -38,6 +43,7 @@
     left:-5%;
     top:-5%;
     z-index: 1;
+    transition: .5s all;
   }
 
   p{
@@ -46,8 +52,7 @@
     top: 350px;
     left: 50%;
     width: 500px;
-
-
+    transition: .5s all;
   }
 
   .banc{
@@ -58,6 +63,7 @@
     top: 300px;
     z-index: 0;
     opacity: 0;
+    transition: .5s all;
   }
 
 
@@ -70,7 +76,9 @@
       color: var(--color-white);
       transition: .5s all;
       top:950px;
+      padding: 20px;
       border: 2px solid  var(--color-white);
+      background:  var(--color-black);
     }
     h4{
       color: var(--color-white);
@@ -112,6 +120,7 @@
 
     .swiper-slide{
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
 
@@ -130,7 +139,7 @@
 
   .swiper-pagination-bullet{
     background: var(--color-white);
-    opacity: 0;
+
   }
 
   .swiper-scrollbar-drag{

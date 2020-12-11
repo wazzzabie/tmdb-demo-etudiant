@@ -101,6 +101,8 @@ class MovieDB{
         this.lang = "fr-Ca";
         this.baseUrl = "https://api.themoviedb.org/3/";
         this.imgPath = "https://image.tmdb.org/t/p/";
+        this.largeurAffiche = ["92", "154", "185", "342", "500", "780"];
+        this.largeurTeteAffiche = ["45", "185"];
         this.totalFilm = 8;
         this.totalActeur = 6;
     }
@@ -170,6 +172,7 @@ class MovieDB{
 
 
 
+        this.totalFilm = 9;
         //this.totalFilm = 9;
         for (let i = 0; i < this.totalFilm; i++) {
 
@@ -177,6 +180,14 @@ class MovieDB{
             let unArticle = document.querySelector(".template-c>article.filmswiper").cloneNode(true);
 
             unArticle.querySelector("h2").innerHTML = dataC[i].title;
+            unArticle.querySelector("h3").innerHTML = dataC[i].vote_average;
+
+            let src = this.imgPath + "w185" + dataC[i].poster_path;
+
+            let uneImage = unArticle.querySelector("img");
+            uneImage.setAttribute("src", src);
+            uneImage.setAttribute("alt", dataC[i].title);
+
 
 
             document.querySelector(".swiper-wrapper").appendChild(unArticle);
@@ -225,19 +236,26 @@ class MovieDB{
         console.log(data)
         this.requeteActeur();
 
-        document.querySelector('h2').innerHTML = data.title;
-        document.querySelector('p').innerHTML = data.overview;
-        document.querySelector('h4').innerHTML = data.release_date;
-        document.querySelector('.fiche-film h3').innerHTML = data.vote_average;
+        let thing = document.querySelector(".fiche-film");
 
+        thing.querySelector('h2').innerHTML = data.title;
+        thing.querySelector('p').innerHTML = data.overview;
+        thing.querySelector('h4').innerHTML = data.release_date;
+        thing.querySelector('.fiche-film h3').innerHTML = data.vote_average;
+
+        let src = this.imgPath + "w185" + data.poster_path;
+
+        let uneImage = thing.querySelector("img");
+        uneImage.setAttribute("src", src);
+        uneImage.setAttribute("alt", data.title || "pas de photo");
     }
 
 
     requeteActeur(movieId){
 
         let requete = new XMLHttpRequest();
-        requete.addEventListener("readystatechange", this.retourActeur.bind(this));
-        requete.open("GET", this.baseUrl + "movie/" + movieId + "/credits?api_key=" + this.apiKey);
+        requete.addEventListener("loadend", this.retourActeur.bind(this));
+        requete.open("GET", this.baseUrl + "movie/" + movieId + "/credits?api_key=" + this.apiKey+"&language="+ this.lang +"&page=1");
         requete.send();
     }
     retourActeur(event){
@@ -257,8 +275,14 @@ class MovieDB{
             let unActeur = document.querySelector(".template>article.acteur").cloneNode(true);
 
             unActeur.querySelector("h1").innerText = data[i].name;
-            //let uneImage = unActeur.querySelector("img");
-            //uneImage.setAttribute("src", this.imgPath + "w" + this.largeurTeteAffiche[1] + data[i].profile_path);
+
+
+            let src = this.imgPath + "w185" + data[i].profile_path;
+
+            let uneImage = unActeur.querySelector("img");
+            uneImage.setAttribute("src", src) ;
+            uneImage.setAttribute("alt", data.title || "pas de photo");
+
 
 
             document.querySelector("div.swiper-wrapper").appendChild(unActeur);

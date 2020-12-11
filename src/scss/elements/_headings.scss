@@ -11,6 +11,7 @@ h1, h2, h3, h4, h5, h6{
 h1{
   font-size: var(--fz-h1);
   text-transform: uppercase;
+  font-family: var(--ff-title-secondary);
 }
 
 h2{
