@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-    /*var mySwiper = new Swiper('.swiper-container', {
+    var mySwiper = new Swiper('.swiper-container', {
         // Optional parameters
 
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(){
         scrollbar: {
             el: '.swiper-scrollbar',
         },
-    })*/
+    })
 
 
 /*----------------------------------------------------------------------------------*/
@@ -77,8 +77,9 @@ let connexion = new MovieDB();
 
 
  if(document.location.pathname.search('fiche-film.html')> 0){
-
-    connexion.requeteInfoFilm(14)
+    let params = new URL(document.location).searchParams;
+    console.log(params)
+    connexion.requeteInfoFilm(params.get('id'));
  }else{
      connexion.requeteDernierFilm();
 
@@ -220,9 +221,13 @@ class MovieDB{
 
     }
     afficherInfoFilm(data){
+        console.log(data)
 
         document.querySelector('h2').innerHTML = data.title;
         document.querySelector('p').innerHTML = data.overview;
+        document.querySelector('h4').innerHTML = data.release_date;
+        document.querySelector('.fiche-film h3').innerHTML = data.vote_average;
+
 
        /* for (let i = 0; i < this.totalFilm; i++) {
             console.log(data[i].title);

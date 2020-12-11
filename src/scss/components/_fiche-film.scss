@@ -1,10 +1,31 @@
 .fiche-film{
   display:flex;
   margin-top: 220px;
+  height: 750px;
+  padding: 50px 100px 50px 100px;
 
+  .affiche{
+    width: 300px;
+    height: 500px;
+    left: 50%;
+  }
 
-  img{
-    width: 50%;
+  h3{
+    position:absolute;
+    top: 920px;
+    left: 50%;
+    color: var(--color-text-primary);
+
+    box-sizing: border-box;
+    border-radius: 50%;
+    z-index: 0;
+    transform: translate(-50%,-50%);
+  }
+
+  h4{
+    top:750px;
+    position:absolute;
+    font-size: 1rem;
   }
 
   h2{
@@ -13,12 +34,70 @@
     mix-blend-mode: difference;
     color: var(--color-white);
     font-size: 3rem;
+    position: relative;
+    left:-5%;
+    top:-5%;
     z-index: 1;
-
   }
 
   p{
+    position:absolute;
+    margin-top:180px;
+    top: 350px;
+    left: 50%;
+    width: 500px;
+
 
   }
+
+  .banc{
+    position:absolute;
+    height:644px ;
+    width:600px;
+    left: 50%;
+    top: 300px;
+    z-index: 0;
+    opacity: 0;
+  }
+
+
+
+  &:hover{
+    background: #2f0202;
+    transition: .5s all;
+
+    h3{
+      color: var(--color-white);
+      transition: .5s all;
+    }
+    h4{
+      color: var(--color-white);
+      transition: .5s all;
+    }
+
+    h2{
+      mix-blend-mode: lighten;
+      left: 12%;
+      transition: .5s all;
+    }
+
+    p{
+      color: var(--color-white);
+      transition: .5s all;
+    }
+    .liste-acteurs{
+      background: var(--color-white);
+      transition: .5s all;
+    }
+    .banc{
+      opacity: 0.5;
+      transition: 1.5s all;
+    }
+  }
 }
+
+
+
+
+
 
