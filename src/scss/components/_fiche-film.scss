@@ -69,6 +69,8 @@
     h3{
       color: var(--color-white);
       transition: .5s all;
+      top:950px;
+      border: 2px solid  var(--color-white);
     }
     h4{
       color: var(--color-white);
@@ -96,7 +98,54 @@
   }
 }
 
+.liste-acteurs{
+  height: 500px;
+  border:2px solid var(--color-white);
+  margin-bottom:100px ;
 
+  .swiper-container{
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+
+
+
+    .swiper-slide{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+    .filmswiper{
+      flex-direction: column;
+      margin: 0 50px 0 50px;
+
+    }
+  }
+
+  .swiper-button-prev, .swiper-button-next{
+    color:var(--color-white);
+  }
+
+  .swiper-pagination-bullet{
+    background: var(--color-white);
+    opacity: 0;
+  }
+
+  .swiper-scrollbar-drag{
+    background: var(--color-white);
+    opacity: 0;
+  }
+
+  img{
+    width: 200px;
+    height: 200px;
+
+
+  }
+
+}
 
 
 
