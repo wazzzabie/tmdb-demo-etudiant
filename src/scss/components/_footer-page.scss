@@ -49,4 +49,16 @@
 
 }
 
+@media screen and (max-width: $vw-tiny){
+  .footer-page{
+
+    .wrapper{
+      flex-direction: column;
+    }
+    p{
+      margin-right: 0;
+
+    }
+  }
+  }
 

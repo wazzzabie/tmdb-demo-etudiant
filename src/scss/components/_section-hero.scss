@@ -1,11 +1,10 @@
 .hero{
-
   background: linear-gradient(var(--color-pinterest), black);
-
-
-
-
-
-
-
+}
+@media screen and (max-width: $vw-medium){
+  .hero{
+    max-width: var(--max-width);
+    min-width: var(--min-width);
+    margin: 0 auto;
+  }
 }

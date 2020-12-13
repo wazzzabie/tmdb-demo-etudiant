@@ -103,7 +103,7 @@ class MovieDB{
         this.imgPath = "https://image.tmdb.org/t/p/";
         this.largeurAffiche = ["92", "154", "185", "342", "500", "780"];
         this.largeurTeteAffiche = ["45", "185"];
-        this.totalFilm = 8;
+        this.totalFilm = 9;
         this.totalActeur = 6;
     }
 

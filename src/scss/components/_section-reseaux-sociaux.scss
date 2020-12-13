@@ -65,11 +65,20 @@
         transform: rotate(360deg);
       }
     }
-    
-    
   }
+}
 
+@media screen and (max-width: $vw-medium){
+  .reseaux-sociaux{
+    max-width: var(--max-width);
+    min-width: var(--min-width);
+    margin: 0 auto;
+  }
+}
 
-
-
+@media screen and (max-width: $vw-tiny){
+  .reseaux-sociaux{
+    flex-direction: column;
+    height: 600px;
+  }
 }
