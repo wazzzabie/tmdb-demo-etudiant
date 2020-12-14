@@ -81,6 +81,7 @@ let connexion = new MovieDB();
     console.log(params)
     connexion.requeteInfoFilm(params.get('id'));
     connexion.requeteActeur(params.get('id'));
+
  }else{
      connexion.requeteDernierFilm();
 
@@ -106,6 +107,8 @@ class MovieDB{
         this.totalFilm = 9;
         this.totalActeur = 6;
     }
+
+
 
     requeteDernierFilm(){
         let requete = new XMLHttpRequest();
@@ -154,67 +157,6 @@ class MovieDB{
         }
     }
 
-    requeteCarouselFilm(){
-
-        let carrousel =  new XMLHttpRequest();
-        carrousel.addEventListener("loadend", this.retourCarrouselFilm.bind(this));
-        carrousel.open('GET', this.baseUrl +"movie/popular?api_key="+ this.apiKey +"&language="+ this.lang +"&page=1");
-        carrousel.send();
-    }
-    retourCarrouselFilm(event){
-        console.log('retourCarrouselFilm');
-        let targetC = event.currentTarget;
-        let dataC = JSON.parse(targetC.responseText).results
-        this.afficherCarrouselFilm(dataC);
-        //console.log(targetC.responseText);
-    }
-    afficherCarrouselFilm(dataC){
-
-
-
-        this.totalFilm = 9;
-        //this.totalFilm = 9;
-        for (let i = 0; i < this.totalFilm; i++) {
-
-            console.log(dataC[i]);
-            let unArticle = document.querySelector(".template-c>article.filmswiper").cloneNode(true);
-
-            unArticle.querySelector("h2").innerHTML = dataC[i].title;
-            unArticle.querySelector("h3").innerHTML = dataC[i].vote_average;
-
-            let src = this.imgPath + "w185" + dataC[i].poster_path;
-
-            let uneImage = unArticle.querySelector("img");
-            uneImage.setAttribute("src", src);
-            uneImage.setAttribute("alt", dataC[i].title);
-
-
-
-            document.querySelector(".swiper-wrapper").appendChild(unArticle);
-
-        }
-        var mySwiper = new Swiper('.swiper-container', {
-            // Optional parameters
-
-
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-            },
-
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
-            // And if we need scrollbar
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            },
-        })
-    }
-
 
     requeteInfoFilm(movieId){
         let requete = new XMLHttpRequest();
@@ -250,6 +192,66 @@ class MovieDB{
         uneImage.setAttribute("alt", data.title || "pas de photo");
     }
 
+    requeteCarouselFilm(){
+
+        let carrousel =  new XMLHttpRequest();
+        carrousel.addEventListener("loadend", this.retourCarrouselFilm.bind(this));
+        carrousel.open('GET', this.baseUrl +"movie/popular?api_key="+ this.apiKey +"&language="+ this.lang +"&page=1");
+        carrousel.send();
+    }
+    retourCarrouselFilm(event){
+        console.log('retourCarrouselFilm');
+        let targetC = event.currentTarget;
+        let dataC = JSON.parse(targetC.responseText).results
+        this.afficherCarrouselFilm(dataC);
+        //console.log(targetC.responseText);
+    }
+    afficherCarrouselFilm(dataC){
+
+
+
+        this.totalFilm = 9;
+        //this.totalFilm = 9;
+        for (let i = 0; i < this.totalFilm; i++) {
+
+            console.log(dataC[i]);
+            let unArticle = document.querySelector(".template-c>article.filmswiper").cloneNode(true);
+
+            unArticle.querySelector("h2").innerHTML = dataC[i].title;
+            unArticle.querySelector("h3").innerHTML = dataC[i].vote_average;
+
+            let src = this.imgPath + "w185" + dataC[i].poster_path;
+
+            let uneImage = unArticle.querySelector("img");
+            uneImage.setAttribute("src", src);
+            uneImage.setAttribute("alt", dataC[i].title);
+
+            unArticle.querySelector('a').href = "fiche-film.html?id=" + dataC[i].id;
+
+            document.querySelector(".swiper-wrapper").appendChild(unArticle);
+
+        }
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        })
+    }
 
     requeteActeur(movieId){
 

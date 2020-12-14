@@ -41,7 +41,7 @@
   flex-direction: row;
   justify-content: space-between;
 
-  img{
+  .img{
     position: absolute;
     width: 40%;
     -webkit-box-shadow: 0 0 150px #000;
@@ -87,7 +87,7 @@
 }
 
   .swiper-slide{
-    img{
+    .img{
       width: 50%;
     }
 
@@ -103,7 +103,7 @@
 @media screen and (max-width: $vw-medium){
 
   .swiper-slide{
-    img{
+    .img{
       width: 80%;
     }
 
