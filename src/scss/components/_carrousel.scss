@@ -63,7 +63,7 @@
   h2{
     position: absolute;
     top:590px;
-    z-index: 3;
+    z-index: 2;
     padding: 10px 20px 10px 20px;
     background: inherit;
     border-radius: 2px;
@@ -73,7 +73,7 @@
   h3{
     position: absolute;
     top:490px;
-    z-index: 2;
+    z-index: 3;
     background: var(--color-black);
     padding: 25px ;
     border: 3px solid var(--color-white);
@@ -89,6 +89,12 @@
   .swiper-slide{
     img{
       width: 50%;
+    }
+
+    h2{
+      top: 570px;
+      background: var(--color-black);
+      border: 2px solid var(--color-white);
     }
 
   }

@@ -8,10 +8,7 @@
   .affiche{
     width: 350px;
     height: 500px;
-    left: 50%;
   }
-
-
 
   h3{
     position:absolute;
@@ -79,6 +76,7 @@
       padding: 20px;
       border: 2px solid  var(--color-white);
       background:  var(--color-black);
+      transform: translate(-50%,-50%);
     }
     h4{
       color: var(--color-white);
@@ -116,14 +114,11 @@
     width: 100%;
     height: 100%;
 
-
-
     .swiper-slide{
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
 
     }
     .filmswiper{
@@ -149,13 +144,110 @@
 
   img{
     width: 200px;
-    height: 200px;
+    height: 300px;
 
 
+  }
+}
+
+@media screen and (max-width: $vw-special){
+
+  .fiche-film{
+    color:var(--color-white);
+    display: flex;
+    background: #2f0202;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+
+    .banc{
+      display: none;
+    }
+
+    .affiche{
+      margin-top: 40px;
+      width: 400px;
+    }
+
+    h3{
+      position: unset;
+      transform: none;
+      justify-content: center;
+      color:var(--color-white);
+      padding: 20px;
+      border: 2px solid  var(--color-white);
+      background:  var(--color-black);
+    }
+
+    h4{
+      position: unset;
+      color:var(--color-white);
+      margin-top: 0;
+    }
+
+    h2{
+      font-size: var(--fz-h2);
+      position: unset;
+      color:var(--color-white);
+      width: 100%;
+      margin-left: 0;
+      mix-blend-mode: lighten;
+      left:0;
+      top:0;
+      padding: 20px;
+      margin-bottom: 0;
+    }
+
+    p{
+      position: unset;
+      width: 100%;
+      padding: 20px;
+      margin-top:0;
+      margin-bottom:40px;
+    }
+
+    &:hover{
+
+      h3{
+        top:0;;
+        transform: none;
+      }
+
+     }
   }
 
 }
 
+@media screen and (max-width: $vw-medium){
+  .fiche-film{
+    margin-top: 83px;
+
+    .affiche{
+      width: 400px;
+    }
+  }
 
 
+}
 
+@media screen and (max-width: $vw-medium){
+  .fiche-film{
+    margin-top: 83px;
+
+    .affiche{
+      width: 400px;
+    }
+  }
+}
+
+  @media screen and (max-width: $vw-small){
+    .fiche-film{
+      .affiche{
+        width: 100%;
+      }
+    }
+  }
