@@ -140,7 +140,7 @@ class MovieDB{
             unArticle.querySelector("h2").innerHTML = data[i].title;
             unArticle.querySelector("h3").innerHTML = data[i].vote_average;
             unArticle.querySelector("h4").innerHTML = data[i].release_date;
-            unArticle.querySelector("p.description").innerHTML = data[i].overview || "pas de description";
+
 
             let src = this.imgPath + "w185" + data[i].poster_path;
             //console.log(src);
@@ -182,7 +182,11 @@ class MovieDB{
 
         thing.querySelector('h2').innerHTML = data.title;
         thing.querySelector('p').innerHTML = data.overview;
-        thing.querySelector('h4').innerHTML = data.release_date;
+        thing.querySelector('.date').innerHTML = data.release_date;
+        thing.querySelector('.langue').innerHTML = "Langue : " + data.original_language;
+        thing.querySelector('.duree').innerHTML = "Durée : " + data.runtime + " mins";
+        thing.querySelector('.budget').innerHTML = "Budget : " + data.budget +"$";
+        thing.querySelector('.recette').innerHTML = "Revenu : " + data.revenue +"$";
         thing.querySelector('.fiche-film h3').innerHTML = data.vote_average;
 
         let src = this.imgPath + "w185" + data.poster_path;

@@ -23,10 +23,34 @@
     transition: .5s all;
   }
 
-  h4{
+  .date{
     top:750px;
     position:absolute;
     font-size: 1rem;
+    transition: .5s all;
+  }
+  .langue{
+    top:775px;
+    position:absolute;
+    font-size: 1rem;
+    transition: .5s all;
+  }
+  .duree{
+    top:800px;
+    position:absolute;
+    font-size: 1rem;
+    transition: .5s all;
+  }
+  .budget{
+    top:850px;
+    position:absolute;
+    font-size: 0.75rem;
+    transition: .5s all;
+  }
+  .recette{
+    top:870px;
+    position:absolute;
+    font-size: 0.75rem;
     transition: .5s all;
   }
 
@@ -66,7 +90,7 @@
 
 
   &:hover{
-    background: #2f0202;
+    background: var(--color-tertiary);
     transition: .5s all;
 
     h3{
@@ -155,7 +179,7 @@
   .fiche-film{
     color:var(--color-white);
     display: flex;
-    background: #2f0202;
+    background: var(--color-tertiary);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -183,7 +207,30 @@
       background:  var(--color-black);
     }
 
-    h4{
+  .date{
+      position: unset;
+      color:var(--color-white);
+      margin-top: 0;
+    margin-bottom: 5px;
+    }
+    .duree{
+      position: unset;
+      color:var(--color-white);
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    .langue{
+      position: unset;
+      color:var(--color-white);
+      margin-top: 0;
+    }
+    .budget{
+      position: unset;
+      color:var(--color-white);
+      margin-top: 0;
+      margin-bottom: 2px;
+    }
+    .recette{
       position: unset;
       color:var(--color-white);
       margin-top: 0;

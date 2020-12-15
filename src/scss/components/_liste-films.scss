@@ -5,7 +5,9 @@
   justify-content: space-between;
 
 
-
+  a{
+    margin: 100px 0 45px 0;
+  }
 
 
   article {
@@ -14,9 +16,6 @@
     margin-bottom: 20px;
   }
 
-  p{
-    margin: 30px;
-  }
 
   h2{
     margin-bottom: 0;
@@ -44,7 +43,7 @@
 
   &:hover{
     color: var(--color-white);
-    background: #2f0202;
+    background:var(--color-tertiary);
     transition: .9s all;
 
     h4{
@@ -53,7 +52,7 @@
     }
 
     img{
-      border: 15px solid #2f0202;
+      border: 15px solid var(--color-tertiary);
       transition: .5s all;
     }
 
@@ -71,9 +70,6 @@
   }
 }
 
-.film{
-  display:flex;
-}
 
 .liste-films article {
   -ms-flex-preferred-size: 50%;
@@ -116,7 +112,7 @@
 
     &:nth-child(even) {
       color: var(--color-white);
-      background: #2f0202;
+      background: var(--color-tertiary);
     }
   }
 

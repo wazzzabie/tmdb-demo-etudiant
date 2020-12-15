@@ -30,7 +30,7 @@
    margin-right: 150px;
    font-family: 'Parisienne', cursive;
    &:hover{
-     color: var(--color-pinterest);
+     color: var(--color-primary);
      transition: .5s all;
 
    }
@@ -40,7 +40,7 @@
   font-size: 1.6rem;
 
   &:hover{
-    color: var(--color-pinterest);
+    color: var(--color-primary);
     transition: .5s all;
     cursor: pointer;
   }

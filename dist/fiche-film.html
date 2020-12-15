@@ -27,11 +27,11 @@
         <nav class="nav-primary">
             <ul>
                 <li><a href="index.html"><span class="liens">Accueil</span></a></li>
-                <li><a href="#"><span class="liens">À l'affiche</span></a></li>
+                <li><a href="#liens"><span class="liens">Liens</span></a></li>
                 <li><a href="index.html" class="menu-logo"><h1 class="logo">
                     <span class="material-icons">theaters</span>TimFlix
                 </h1></a></li>
-                <li><a href="#"><span class="liens">À Venir</span></a></li>
+                <li><a href="index.html"><span class="liens">À Venir</span></a></li>
                 <li><a href="#"><span class="liens">Connexion</span></a></li>
             </ul>
         </nav>
@@ -49,9 +49,9 @@
             </ul>
             <nav class="mobile-modal">
                 <ul>
-                    <li><a href="#"><span>Accueil</span></a></li>
-                    <li><a href="#"><span>À l'affiche</span></a></li>
-                    <li><a href="#"><span>À Venir</span></a></li>
+                    <li><a href="index.html"><span>Accueil</span></a></li>
+                    <li><a href="#liens"><span>Liens</span></a></li>
+                    <li><a href="index.html"><span>À Venir</span></a></li>
                     <li><a href="#"><span>Connexion</span></a></li>
                 </ul>
             </nav>
@@ -76,12 +76,17 @@
         <img class="affiche" src="images/image-temp.jpg" alt="Description de l'image (à modifier)">
         <h3>Note du film (à modifier)</h3>
         <h2>Titre du film (à modifier)</h2>
-        <h4>Date du film (à modifier)</h4>
-
-
+        <h4 class="date">Date du film (à modifier)</h4>
+        <h4 class="langue">langue du film (à modifier)</h4>
 
         <img class="banc" src="images/theatre-seats-png-3.png"/>
         <p class="description">Une description du film. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error illum laborum non.</p>
+
+
+        <h4 class="duree">duree du film (à modifier)</h4>
+        <h4 class="budget">budget du film (à modifier)</h4>
+        <h4 class="recette">recette du film (à modifier)</h4>
+
     </main>
 
     <div class="liste-acteurs">
@@ -109,16 +114,16 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-<section class="reseaux-sociaux">
-    <a href="#" class="fab fa-facebook-f"></a>
-    <a href="#" class="fab fa-twitter"></a>
-    <a href="#" class="fab fa-pinterest-p"></a>
+<section class="reseaux-sociaux" id="liens">
+    <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+    <a href="https://twitter.com/" class="fab fa-twitter"></a>
+    <a href="https://www.pinterest.com/" class="fab fa-pinterest-p"></a>
 </section>
 
 <footer class="footer-page">
     <div class="wrapper">
-        <img class="logodb" src="images/logodb.png"/>
-        <p>Rudy Breton</p>
+        <a href="https://www.themoviedb.org/" class="img"><img class="logodb" src="images/logodb.png"/></a>
+        <a href="https://www.instagram.com/rxdy.b/?hl=fr-ca" class="p"><p>Rudy Breton</p></a>
         <div id="retour" class="retour">
             <i class="material-icons arrow">arrow_circle_up</i>
         </div>

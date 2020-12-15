@@ -38,7 +38,7 @@
     &:before {
       content: "";
       display: block;
-      background:var(--color-pinterest);
+      background:var(--color-primary);
       width: 100%;
       height: 5px;
       position: absolute;
@@ -49,7 +49,7 @@
     }
 
     &:hover{
-      color: var(--color-pinterest);
+      color: var(--color-primary);
       transition: .5s all;
 
 
@@ -107,7 +107,7 @@
 
   li{
     border-bottom: 2px var(--color-bg-primary) solid;
-    background: var(--color-pinterest);
+    background: var(--color-primary);
   }
 
   a{
